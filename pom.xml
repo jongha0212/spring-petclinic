@@ -135,6 +135,7 @@
 
   <build>
     <defaultGoal>install</defaultGoal>
+      <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
         <groupId>io.spring.javaformat</groupId>
