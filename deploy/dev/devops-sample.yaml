@@ -3,9 +3,9 @@ kind: Deployment
 metadata:
   labels:
     app: kubesphere
-    component: petclinc-dev
+    component: petclinic-dev
     tier: backend
-  name: petclinc-dev
+  name: petclinic-dev
   namespace: petclinic-project
 spec:
   progressDeadlineSeconds: 600
@@ -13,19 +13,19 @@ spec:
   selector:
     matchLabels:
       app: kubesphere
-      component: petclinc-dev
+      component: petclinic-dev
       tier: backend
   template:
     metadata:
       labels:
         app: kubesphere
-        component: petclinc-dev
+        component: petclinic-dev
         tier: backend
     spec:
       containers:
         - image: $REGISTRY/$DOCKERHUB_NAMESPACE/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
           imagePullPolicy: Always
-          name: petclinc
+          name: petclinic
           readinessProbe:
             httpGet:
               path: /
